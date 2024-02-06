@@ -18,7 +18,7 @@ export const ExtraButtons = () => {
 
   return (
     <div
-      className={`absolute bottom-0 p-2 gap-6 flex w-full bg-white dark:bg-[#0c0a09]`}
+      className={`absolute bottom-0 p-2 gap-6 flex w-full bg-white dark:bg-[#0c0a09] hidden`}
     >
       <Button
         className={`w-full`}
