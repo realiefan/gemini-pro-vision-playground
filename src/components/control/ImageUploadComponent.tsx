@@ -120,7 +120,7 @@ const ImageUploadComponent: React.FC<ImageUploadComponentProps> = memo(
         {isDragActive && (
           <div className="absolute inset-0 flex flex-col items-center justify-center text-primary/90 bg-slate-primary-10 z-10">
             <Import />
-            <p className="font-semibold text-2xl text-center">
+            <p className="font-semibold text-lg text-center">
               Drop Image Here
             </p>
           </div>
@@ -147,10 +147,10 @@ const ImageUploadComponent: React.FC<ImageUploadComponentProps> = memo(
               <button
                 type="button"
                 onClick={open}
-                className="absolute inset-0 flex flex-col items-center justify-center text-primary/50 hover:text-primary/90 bg-primary/10"
+                className="absolute inset-0 flex flex-col items-center justify-center  text-primary/50 hover:text-primary/90 bg-primary/10"
               >
                 {<Upload />}
-                <p className="font-semibold text-2xl">Drop Image Here</p>
+                <p className="font-semibold text-lg">Drop Image Here</p>
                 <p className={`text-sm text-red-500`}>{error}</p>
               </button>
             )}

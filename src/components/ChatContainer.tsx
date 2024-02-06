@@ -54,7 +54,7 @@ export const ChatContainer = () => {
   );
 
   return (
-    <div className="flex flex-col h-[95vh]">
+    <div className="flex flex-col h-[98vh] pb-4">
       <Card className="flex flex-col flex-1 overflow-hidden">
         {messages.length > 0 && (
           <div className={`flex p-4`}>
