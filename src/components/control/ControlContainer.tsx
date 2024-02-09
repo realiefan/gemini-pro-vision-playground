@@ -162,7 +162,13 @@ export const ControlContainer = () => {
               />
             </AccordionContent>
           </AccordionItem>
+          <div className="pt-4 font-bold text-sm text-[#4285f4]">
+          <p>
+                Made by iefan
+              </p>
+              </div>
         </Accordion>
+
 
         {selectedModel === "gemini-pro-vision" && (
           <div className="my-8">

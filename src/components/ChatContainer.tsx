@@ -54,44 +54,45 @@ export const ChatContainer = () => {
   );
 
   return (
-    <div className="flex flex-col h-[90vh] pb-4">
-      <Card className="flex flex-col flex-1 overflow-hidden">
-        {messages.length > 0 && (
-          <div className={`flex p-4`}>
-            <Button
-              variant={`secondary`}
-              type={`button`}
-              size={`sm`}
-              onClick={() => setMessages([])}
-            >
-              <MessageCircleX className={`mr-2`} /> Clear chat history
-            </Button>
-          </div>
-        )}
-        <div className="flex-1 overflow-y-auto">
-          {messages.map((message, index) => (
-            <MessageItem
-              key={message.id}
-              message={message}
-              isLastMessage={messages.length === index + 1}
-              isLoading={isLoading}
-              onRefresh={reload}
-              onRemove={() => handleRemoveMessage(message.id)}
-            />
-          ))}
-
-          <div ref={messagesEndRef} />
-          {isLoading && <TypingBubble />}
+    <div className="flex flex-col h-[95vh] py-2">
+    <Card className="flex flex-col bg-[#131314] flex-1 overflow-hidden border border-gray-600 rounded-md">
+      {messages.length > 0 && (
+        <div className="flex justify-end p-4">
+          <Button
+            variant="secondary"
+            type="button"
+            size="sm"
+            onClick={() => setMessages([])}
+          >
+            <MessageCircleX className="mr-2 text-sm" /> Clear Chat
+          </Button>
         </div>
-        <CommonForm
-          value={input}
-          placeholder="Chat with Gemini Pro"
-          loading={isLoading}
-          onInputChange={handleInputChange}
-          onFormSubmit={handleSubmit}
-          isSubmittable={input.trim() !== ""}
-        />
-      </Card>
-    </div>
+      )}
+      <div className="flex-1 overflow-y-auto px-4 py-2">
+        {messages.map((message, index) => (
+          <MessageItem
+            key={message.id}
+            message={message}
+            isLastMessage={messages.length === index + 1}
+            isLoading={isLoading}
+            onRefresh={reload}
+            onRemove={() => handleRemoveMessage(message.id)}
+          />
+        ))}
+  
+        <div ref={messagesEndRef} />
+        {isLoading && <TypingBubble />}
+      </div>
+      <CommonForm
+        value={input}
+        placeholder="Chat with Gemini Pro"
+        loading={isLoading}
+        onInputChange={handleInputChange}
+        onFormSubmit={handleSubmit}
+        isSubmittable={input.trim() !== ""}
+      />
+    </Card>
+  </div>
+  
   );
 };
