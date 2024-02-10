@@ -20,7 +20,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center max-w-screen-lg mx-auto">
       {/* Navbar */}
       <nav className="p-1 w-full flex items-center justify-between">
-        <h1 className="text-white text-md font-bold">Your App Name</h1>
+        <h1 className="text-white text-md ml-2 text-[#548dd9] font-bold">iefan's ai</h1>
         <button
           className="text-white p-2 text-md cursor-pointer"
           onClick={toggleSidebar}
@@ -30,7 +30,7 @@ export default function Home() {
       </nav>
 
       {/* Main Content */}
-      <main className="p-2 w-full">
+      <main className="p-1 w-full">
         <div className={`relative md:col-span-3 h-[95vh] ${isSidebarVisible ? 'block' : 'hidden'}`}>
           <ControlContainer />
         </div>
