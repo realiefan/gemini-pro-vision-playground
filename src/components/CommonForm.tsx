@@ -101,7 +101,7 @@ export const CommonForm: React.FC<CommonFormProps> = ({
         onKeyDown={handleKeyPress}
         style={{ height: textareaHeight }}
         rows={1}
-        className="flex-1 p-2 resize-none min-h-8 bg-[#424242] rounded max-h-[50vh]"
+        className="flex-1 p-2 resize-none min-h-8 rounded max-h-[50vh]"
         placeholder={placeholder}
       />
       <div className="mt-auto">
