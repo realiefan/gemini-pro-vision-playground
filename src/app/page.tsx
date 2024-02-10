@@ -20,7 +20,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center max-w-screen-lg mx-auto">
       {/* Navbar */}
       <nav className="p-1 w-full flex items-center justify-between">
-        <h1 className="text-white text-md ml-2 text-[#548dd9] font-bold">iefan's ai</h1>
+        <h1 className="text-white text-md ml-2 text-[#7f7dd1] font-bold">iefan's ai</h1>
         <button
           className="text-white p-2 text-md cursor-pointer"
           onClick={toggleSidebar}
