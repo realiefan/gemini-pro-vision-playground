@@ -91,7 +91,7 @@ export const CommonForm: React.FC<CommonFormProps> = ({
   return (
     <form
       onSubmit={onFormSubmit}
-      className="flex gap-4 pt-4  border-t border-primary/70 p-2"
+      className="flex gap-4 pt-2  border-t border-primary/70 p-2"
     >
       <textarea
         ref={textareaRef}
