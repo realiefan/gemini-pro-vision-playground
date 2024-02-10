@@ -30,7 +30,7 @@ export default function Home() {
       </nav>
 
       {/* Main Content */}
-      <main className="p-1 w-full">
+      <main className="p-2 w-full">
         <div className={`relative md:col-span-3 h-[95vh] ${isSidebarVisible ? 'block' : 'hidden'}`}>
           <ControlContainer />
         </div>
