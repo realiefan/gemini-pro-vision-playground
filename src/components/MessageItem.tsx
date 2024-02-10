@@ -39,9 +39,9 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
         <div
           className={`${
             isUser ? "" : "rounded bg-primary/10 dark:bg-primary/10"
-          } px-1 py-1 w-full`}
+          } px-1 py-1 w-full bg-gray-700 rounded`}
         >
-          <div className="my-2 flex justify-between">
+          <div className="my-1 flex justify-between">
             <div className=" ml-2 flex space-x-2 font-sm">
               {isUser ? <User /> : <Bot />}
               <div>{isUser ? "You" : "Gemini Pro"}</div>
@@ -85,7 +85,7 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
               )}
             </div>
           </div>
-          <div className="text-sm p-2"> {/* Adjust the font size */}
+          <div className="text-sm p-1"> {/* Adjust the font size */}
             <MarkdownViewer text={message.content} />
           </div>
         </div>
