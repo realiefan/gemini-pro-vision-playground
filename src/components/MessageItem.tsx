@@ -46,7 +46,7 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
               {isUser ? <User /> : <Bot />}
               <div>{isUser ? "You" : "Gemini Pro"}</div>
             </div>
-            <div className={`space-x-4 mr-2`}>
+            <div className={`space-x-4`}>
               {!isLoading && isLastMessage && isUser && (
                 <Button
                   variant="icon"
