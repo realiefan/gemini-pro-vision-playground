@@ -54,21 +54,10 @@ export const ChatContainer = () => {
   );
 
   return (
-    <div className="flex flex-col h-[95vh] py-0">
+    <div className="flex flex-col h-[91vh]  py-0">
     <Card className="flex flex-col  flex-1 overflow-hidden border border-gray-600 rounded-md">
-      {messages.length > 0 && (
-        <div className="flex justify-end p-4">
-          <Button
-            variant="secondary"
-            type="button"
-            size="sm"
-            onClick={() => setMessages([])}
-          >
-            <MessageCircleX className="mr-2 text-sm" /> Clear Chat
-          </Button>
-        </div>
-      )}
-      <div className="flex-1 overflow-y-auto px-4 py-2">
+      
+      <div className="flex-1 overflow-y-auto px-1 py-1">
         {messages.map((message, index) => (
           <MessageItem
             key={message.id}

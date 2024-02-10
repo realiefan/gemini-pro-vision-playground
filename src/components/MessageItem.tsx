@@ -1,6 +1,7 @@
-import React, { memo } from "react";
+// app/MessageItem.tsx
+import React, { memo, useState } from "react";
 import { Message } from "ai/react";
-import { Bot, RefreshCw, Trash, User } from "lucide-react";
+import { Bot, RefreshCw, Trash, User, Clipboard } from "lucide-react";
 import { MarkdownViewer } from "./markdown-viewer/MarkdownViewer";
 import { Button } from "./ui/button";
 
@@ -21,20 +22,31 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
     onRemove,
   }) {
     const isUser = message.role === "user";
+    const [isCopied, setIsCopied] = useState(false);
+
+    const handleCopy = () => {
+      navigator.clipboard.writeText(message.content);
+      setIsCopied(true);
+
+      // Reset copied state after a short delay
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 2000);
+    };
 
     return (
       <div className="flex">
         <div
           className={`${
             isUser ? "" : "rounded bg-primary/10 dark:bg-primary/10"
-          } px-4 py-4 w-full`}
+          } px-1 py-1 w-full`}
         >
-          <div className="my-4 flex justify-between">
-            <div className="flex space-x-4 font-medium">
+          <div className="my-2 flex justify-between">
+            <div className=" ml-2 flex space-x-2 font-sm">
               {isUser ? <User /> : <Bot />}
               <div>{isUser ? "You" : "Gemini Pro"}</div>
             </div>
-            <div className={`space-x-6`}>
+            <div className={`space-x-4`}>
               {!isLoading && isLastMessage && isUser && (
                 <Button
                   variant="icon"
@@ -46,18 +58,36 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
                 </Button>
               )}
               {!isLoading && isLastMessage && (
-                <Button
-                  variant="icon"
-                  type="button"
-                  size="sm"
-                  onClick={onRemove}
-                >
-                  <Trash className="w-4 h-4" />
-                </Button>
+                <>
+                  <Button
+                    variant="icon"
+                    type="button"
+                    size="xs"
+                    onClick={handleCopy}
+                    className="bg-blue-500"
+                  >
+                    {isCopied ? (
+                      <Clipboard className="w-4 h-4 text-green-500" />
+                    ) : (
+                      <Clipboard className="w-4 h-4" />
+                    )}
+                  </Button>
+                  <Button
+                    variant="icon"
+                    type="button"
+                    size="xs"
+                    onClick={onRemove}
+                    className="bg-red-500"
+                  >
+                    <Trash className="w-4  h-4" />
+                  </Button>
+                </>
               )}
             </div>
           </div>
-          <MarkdownViewer text={message.content} />
+          <div className="text-sm p-2"> {/* Adjust the font size */}
+            <MarkdownViewer text={message.content} />
+          </div>
         </div>
       </div>
     );
