@@ -1,5 +1,5 @@
 "use client";
-
+// app/page.tsx
 // app/page.tsx
 import { useState } from 'react';
 import { FiSettings } from 'react-icons/fi'; // Import the Settings icon from react-icons
@@ -17,10 +17,10 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col h-full items-center justify-center max-w-screen-lg mx-auto">
+    <div className="flex flex-col items-center justify-center max-w-screen-lg mx-auto">
       {/* Navbar */}
-      <nav className="p-1 w-full  flex items-center justify-between">
-        <h1 className="text-white text-md font-bold">iefan's ai workshop</h1>
+      <nav className="p-1 w-full flex items-center justify-between">
+        <h1 className="text-white text-md font-bold">Your App Name</h1>
         <button
           className="text-white p-2 text-md cursor-pointer"
           onClick={toggleSidebar}
@@ -30,8 +30,8 @@ export default function Home() {
       </nav>
 
       {/* Main Content */}
-      <main className="p-1 w-full">
-        <div className={`relative md:col-span-3 h-[91vh] ${isSidebarVisible ? 'block' : 'hidden'}`}>
+      <main className="p-2 w-full">
+        <div className={`relative md:col-span-3 h-[95vh] ${isSidebarVisible ? 'block' : 'hidden'}`}>
           <ControlContainer />
         </div>
         <div className={`md:col-span-9 ${isSidebarVisible ? 'hidden' : 'block'}`}>

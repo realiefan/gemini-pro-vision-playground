@@ -86,8 +86,7 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
             </div>
           </div>
           <div className="text-sm p-2"> {/* Adjust the font size */}
-          <MarkdownViewer text={message.content.replace(/'/g, '&apos;')} />
-
+            <MarkdownViewer text={message.content} />
           </div>
         </div>
       </div>
