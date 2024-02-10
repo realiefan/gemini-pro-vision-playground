@@ -54,8 +54,8 @@ export const ChatContainer = () => {
   );
 
   return (
-    <div className="flex flex-col h-[95vh] py-2">
-    <Card className="flex flex-col bg-[#131314] flex-1 overflow-hidden border border-gray-600 rounded-md">
+    <div className="flex flex-col h-[95vh] py-0">
+    <Card className="flex flex-col  flex-1 overflow-hidden border border-gray-600 rounded-md">
       {messages.length > 0 && (
         <div className="flex justify-end p-4">
           <Button
