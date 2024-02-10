@@ -1,6 +1,5 @@
 "use client";
-
-
+// componets/control/SafetySelector.tsx
 import * as React from "react";
 
 import {
@@ -13,21 +12,15 @@ import { Slider } from "@/components/ui/slider";
 
 interface SafetySelectorProps {
   label: string;
+  value: number;
+  onValueChange: (newValue: number[]) => void;
 }
 
-export function SafetySelector({ label }: SafetySelectorProps) {
-  // Retrieve the initial value from localStorage or use a default value
-  const initialValue = parseInt(localStorage.getItem(`${label}_value`) || "0", 10);
-  const [value, setValue] = React.useState(initialValue);
-
-  // Function to handle value change and save to localStorage
-  const handleValueChange = (newValue: number[]) => {
-    const newValueInt = newValue[0];
-    setValue(newValueInt);
-    // Save the new value to localStorage
-    localStorage.setItem(`${label}_value`, newValueInt.toString());
-  };
-
+export function SafetySelector({
+  label,
+  value,
+  onValueChange,
+}: SafetySelectorProps) {
   return (
     <div className="grid gap-2 pt-2">
       <HoverCard openDelay={200}>
@@ -50,7 +43,7 @@ export function SafetySelector({ label }: SafetySelectorProps) {
               max={3}
               defaultValue={[value]}
               step={1}
-              onValueChange={handleValueChange}
+              onValueChange={onValueChange}
               className="[&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
               aria-label={label}
             />

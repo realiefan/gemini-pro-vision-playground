@@ -46,9 +46,10 @@ export const ControlContainer = () => {
   const handleRemoveImage = (index: number) => {
     removeMediaData(index);
   };
+  
 
   return (
-    <div className="space-y-2 py-4 px-2">
+    <div className="space-y-2 py-4">
       <div>
         <DropdownMenu>
           <DropdownMenuTrigger
