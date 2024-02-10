@@ -1,5 +1,6 @@
 "use client";
 // app/page.tsx
+// app/page.tsx
 import { useState } from 'react';
 import { FiSettings } from 'react-icons/fi'; // Import the Settings icon from react-icons
 import { VisionContainer } from "@/components/VisionContainer";
@@ -19,7 +20,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center max-w-screen-lg mx-auto">
       {/* Navbar */}
       <nav className="p-1 w-full flex items-center justify-between">
-        <h1 className="text-white text-md ml-2 font-bold">iefan's ws</h1>
+        <h1 className="text-white text-md font-bold">Your App Name</h1>
         <button
           className="text-white p-2 text-md cursor-pointer"
           onClick={toggleSidebar}
