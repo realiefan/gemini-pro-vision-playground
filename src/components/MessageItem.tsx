@@ -39,10 +39,10 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
         <div
           className={`${
             isUser ? "" : "rounded bg-primary/10 dark:bg-primary/10"
-          } px-1 py-1 w-full bg-gray-700 rounded`}
+          } px-1 py-1 w-full  rounded`}
         >
-          <div className="my-1 flex justify-between">
-            <div className=" ml-2 flex space-x-2 font-sm">
+          <div className="my-1 flex  justify-between">
+            <div className=" ml-2 flex  space-x-2 font-sm">
               {isUser ? <User /> : <Bot />}
               <div>{isUser ? "You" : "Gemini Pro"}</div>
             </div>

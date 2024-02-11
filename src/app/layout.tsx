@@ -8,7 +8,7 @@ import { Providers } from "@/providers";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "iefan's ai",
+  title: "WebCore Ai",
   description: "A Simple Playground for Gemini Vision",
 };
 

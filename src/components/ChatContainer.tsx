@@ -72,6 +72,8 @@ export const ChatContainer = () => {
         <div ref={messagesEndRef} />
         {isLoading && <TypingBubble />}
       </div>
+
+      
       <CommonForm
         value={input}
         placeholder="Chat with Gemini Pro"
