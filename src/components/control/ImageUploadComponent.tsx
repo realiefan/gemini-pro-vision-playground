@@ -114,14 +114,14 @@ const ImageUploadComponent: React.FC<ImageUploadComponentProps> = memo(
     return (
       <Card
         {...getRootProps()}
-        className="relative overflow-auto flex justify-center items-center min-h-32 min-w-32"
+        className="relative overflow-auto flex justify-center items-center min-h-16 min-w-16"
       >
         <input {...getInputProps()} className="hidden" />
         {isDragActive && (
           <div className="absolute inset-0 flex flex-col items-center justify-center text-primary/90 bg-slate-primary-10 z-10">
             <Import />
-            <p className="font-semibold text-lg text-center">
-              Drop Image Here
+            <p className="font-semibold text-md text-center">
+              Upload Image
             </p>
           </div>
         )}
@@ -150,7 +150,7 @@ const ImageUploadComponent: React.FC<ImageUploadComponentProps> = memo(
                 className="absolute inset-0 flex flex-col items-center justify-center  text-primary/50 hover:text-primary/90 bg-primary/10"
               >
                 {<Upload />}
-                <p className="font-semibold text-lg">Drop Image Here</p>
+                <p className="font-semibold text-md">Upload Image</p>
                 <p className={`text-sm text-red-500`}>{error}</p>
               </button>
             )}
