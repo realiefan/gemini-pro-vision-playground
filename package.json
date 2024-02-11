@@ -23,6 +23,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "embla-carousel-react": "^8.0.0-rc22",
+    "fill-range": "^7.0.1",
     "html-escaper": "^3.0.3",
     "i": "^0.3.7",
     "lucide-react": "^0.297.0",
