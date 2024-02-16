@@ -44,15 +44,16 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
           <div className="my-1 flex  justify-between">
             <div className=" ml-2 flex  space-x-2 font-sm">
               {isUser ? <User /> : <Bot />}
-              <div>{isUser ? "You" : "Gemini Pro"}</div>
+              <div className="font-bold text-sm">{isUser ? "You" : "Gemini Pro"}</div>
             </div>
             <div className={`space-x-4 mr-2`}>
               {!isLoading && isLastMessage && isUser && (
                 <Button
                   variant="icon"
                   type="button"
-                  size="sm"
+                  size="xs"
                   onClick={onRefresh}
+                  className="bg-blue-500"
                 >
                   <RefreshCw className="w-4 h-4" />
                 </Button>
@@ -64,7 +65,6 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
                     type="button"
                     size="xs"
                     onClick={handleCopy}
-                    className="bg-blue-500"
                   >
                     {isCopied ? (
                       <Clipboard className="w-4 h-4 text-green-500" />
@@ -85,7 +85,9 @@ export const MessageItem: React.FC<MessageItemProps> = memo(
               )}
             </div>
           </div>
-          <div className="text-sm p-1"> {/* Adjust the font size */}
+          <div className="text-sm p-1">
+            {" "}
+            {/* Adjust the font size */}
             <MarkdownViewer text={message.content} />
           </div>
         </div>

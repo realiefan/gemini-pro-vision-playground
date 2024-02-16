@@ -111,7 +111,7 @@ export const VisionContainer = () => {
   );
 
   return (
-    <div className="flex flex-col h-[95vh]">
+    <div className="flex flex-col h-[100%]">
       <Card className="flex flex-col flex-1 overflow-hidden">
         {userQuestion && (
           <div className="bg-primary/20 p-4 flex space-x-4">
